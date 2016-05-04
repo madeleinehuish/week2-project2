@@ -1,40 +1,92 @@
 // JavaScript Looping Exercise
 
 // 1. Output each item in the following Array to your console:
+console.log('Question 1');
 var livingRoom = ['couch', 'lamp', 'rug', 'shelf'];
 
+for (i = 0; i < livingRoom.length; i++) {
+    console.log(livingRoom[i]);
+    }
+
 // 2. Using a loop, log numbers 22-33 in the console.
+console.log('Question 2');
+for (i = 22; i < 34; i++) {
+    console.log(i);
+}
 
 // 3. Using a similar loop, log numbers 75 to 100, only in increments of five.
+console.log('Question 3');
+for (i = 75; i < 101; i = i + 5) {
+    console.log(i);
+}
 
 // 4. Write a while loop that logs "This is how a professional loops." to the console 5 times.
-//     Use this as an example:
-//        var counter = 0;
-//        var num = 2;
+//    Use this as an example:
 
-//        while (num < 1000) {
+    var num = 0;
+
+    while (num < 5) {
 //        num += num;
-//        counter++;
-//        }
-
-//        console.log(counter);
+        num = num + 1;
+        console.log('This is how a professional loops.');
+        }
 
 // 5. Write a conditional statement to find the largest of the numbers in the array provided.
-var largestNum = [-5, -2, -6, 0, -1]
+console.log("Question 5");
+  var largestNum = [-5, -2, -6, 0, -1]
+  var highest = largestNum[0];
+  for (i = 0; i < largestNum.length; i ++){
+            if (largestNum[i] >= highest){
+            highest = largestNum[i];
+        }
+   }
+console.log(highest);
 
 // 6. Separately, use both a for loop and while loop to do the same thing.
 //     Print out the sentence "At home, I have _____ cats." Use the number from your counter to fill in the number.
 //     The numbers should range from 10 to 100, in increments of 25.
+console.log("Question 6");
+
+for (i=10; i < 101; i = i + 25) {
+    console.log("At home, I have " + i + " cats.")
+}
+
+j= 10
+while (j < 101) {
+    console.log("At home, I have " + j + " cats.");
+    j = j +25;
+
+}
 
 // 7. Given the following Array, console log 'Even' if the number is even, 'Even and greater than 10' if the
 //    number is even and greater than 10, and 'Odd' if the number is odd.
 //    HINT: Google 'remainder operator'
+console.log("Question 7");
 var numArray = [2, 17, 9, 24, 8];
+for (i=0; i < numArray.length; i++) {
+	if (numArray[i]%2 === 0) {
+      if (numArray[i] > 10){console.log("Even and greater than 10")}
+      else {console.log("Even")}
+  }
+      else {console.log("odd")}
+}
 
 // 8. Given the following Array, create variable numThrees with the value [13, 23, 33, 43, 53, 63, 73]
-var numArray = [13, 15, 17, 23, 25, 27, 33, 35, 37, 43, 45, 47, 53, 55, 57, 63, 65, 67, 73, 75, 77]
+var numArray = [13, 15, 17, 23, 25, 27, 33, 35, 37, 43, 45, 47, 53, 55, 57, 63, 65, 67, 73, 75, 77];
 var numThrees = [];
+var j = 0;
+var newNum;
 
+for (i = 0; i < numArray.length +1; i++) {
+    
+    newNum = numArray[i];
+    if ( (numArray[i] % 10) === 3) {
+      numThrees[j] = (numArray[i]);
+      j = j + 1;
+    }
+}
+
+console.log(numThrees);
 // 9. Write a loop that outputs the following to the console:
 // #
 // ##
@@ -43,17 +95,43 @@ var numThrees = [];
 // #####
 // ######
 // #######
+// 9. Write a loop that outputs the following to the console:
+// #
+// ##
+// ###
+// ####
+// #####
+// ######
+// #######
+console.log("Question 9");
+var pyramid = [];
+for (i = 1; i < 29; i ++) {
 
+   	if (i === 1 || i ===3 || i === 6 || i ===10 || i === 15 || i === 21 || i === 28) {
+   		pyramid[i] = "#\n";
+   	}
 
-// RO SHAM BO!
+   	else  {
+   		pyramid[i] = "#";
+   		}
+
+}
+var answer = pyramid.join("");
+console.log(answer);
+}// RO SHAM BO!
 // We're going to create a paper, rock, scissors game that prompts you for your choice and allows the computer to
 // randomly choose. You will use an alert to define the winner.
 
 // 10. Use a variable called "human" to prompt the user to type their choice.
+console.log('Question 10');
+var human = prompt('Choose rock, paper, or scissors.');
 // 11. Define an array called "choices" that consists of "paper", "rock", and "scissors".
+var choices = ['paper', 'rock', 'scissors'];
 // 12. Define a variable called "computer" and use Math.random to allow the computer to randomly select a number.
 //    For reference:
 //    Math.random gives you a random number between 0 and 1, which is different each time you call it.
+var computerRandom = Math.random();
+
 // 13. Let's start our conditional statement. Start by reassigning the computer variable to "rock" if the random number
 //    falls between 0 and .33. Run the code until the console prints out "rock" instead of the number.
 //    In English, it will look like this:
@@ -64,6 +142,18 @@ var numThrees = [];
 // 14. Now add the following conditionals to the same statement:
 //    If the random number is between .34 and .66, set the computer variable to "paper".
 //    If the random number is between .67 and 1, set the computer variable to "scissors". (Who the hell seriously chooses scissors first?)
+if ((computerRandom >= 0) && (computer <= .33)) {
+      var computer = "rock";
+      console.log(computer);
+      }
+      else if ((computerRandom >= .34) && (computerRandom <= .66)) {
+      var computer = "paper";
+      console.log(computer);
+      }
+      else {var computer = "scissors";
+      console.log(computer)}
+
+
 // 15. Using both "human", begin another conditional statement. At this time, leave the statements blank.
 //    In English, it will look like this:
 //      if human is "rock"
@@ -72,29 +162,105 @@ var numThrees = [];
 //        leave this blank
 //      else
 //        leave this blank
+
+if ((human === "rock") && (computer === "paper")){
+    console.log("computer wins!")
+}
+    else if ((human === "paper") && (computer === "rock")){
+    console.log("you win!")
+    }
+    else if ((human === "scissors") && (computer === "paper")){
+    console.log("you win!")
+    }
+    else if ((human === "paper") && (computer === "scissors")) {
+    console.log("computer wins!")
+    }
+    else if ((human === "rock") && (computer === "scissors")) {
+    console.log("you win!")
+    }
+    else if ((human === "scissors") && (computer === "rock")) {
+    console.log("computer wins")
+    }
+    else if (human === computer){
+    console.log("TIE!!!")
+    }
+    else {console.log("you must have entered invalid entry.")};
 // 16. Now inside of each condition, we need to compare the "human" variable to the "computer" variable,
 //    then print to the console who won the game.
 // 17. Give yourself a high five for completing your first javascript game!
 // 18. Use the game you made above and rework it using a switch statement.
+switch (human, computer) {
+    case ((human === "rock") && (computer === "paper")) :
+    console.log("computer wins!");
+    break;
+    case ((human === "paper") && (computer === "rock")) :
+    console.log("you win!");
+    break;
+    case ((human === "scissors") && (computer === "paper")) :
+    console.log("you win!");
+    break;
+    case ((human === "paper") && (computer === "scissors")) :
+    console.log("computer wins!");
+    break;
+    case ((human === "rock") && (computer === "scissors")) :
+    console.log("you win!");
+    break;
+    case ((human === "scissors") && (computer === "rock")) :
+    console.log("computer wins");
+    break;
+    case (human === computer) :
+    console.log("TIE!!!");
+    break;
+    default :
+    console.log("you must have entered invalid entry.")};
+    }
+
+
+
 // 19. What happens if your user enters something other than "rock", "paper", or "scissors?". Change your default case
 //     to print a snarky message to the console if the input doesn't match any of the options.
 
 
 // HEDS ER TALES?
 // 20. Use the following variable for your coin flip action:
-       var coin = Math.floor(Math.random() * 2);
+//       var coin = Math.floor(Math.random() * 2);
 //     We're using Math.random again, along with Math.floor.
 //     Remember, Math.random gives you a random number between 0 and 1.
 //     Calling Math.floor on that number will truncate the decimal, and give you a
 //     random number within the bounds of your array. (In this case, our array will only contain two items.)
 // 21. Use a do/while loop to keep flipping the coin until you get tails.
+console.log("Questions 20 & 21, Heads/Tails");
+do {
+var coin = Math.floor(Math.random() * 2);
+if (coin === 0) {
+var result = "heads"
+}
+else {
+var result = "tails"
+}
+console.log(result);} while (result !="tails");
+
 
 // 22. FIZZ BUZZ
 // Write a program that uses console.log to print each number up to 100, with a couple exceptions...
 // If the number is divisible by 3, print "Fizz" instead of the number.
 // If the number is divisible by 5, print "Buzz" instead of the number.
 // If the number is divisible by both 3 and 5, print "FizzBuzz" instead of the number.
-
+var result;
+for (i = 1; i < 101; i ++){
+    if (((i % 3) === 0) && (i % 5 === 0)) {
+    console.log("FizzBuzz");
+    }
+    else if (((i % 3) === 0) && ((i % 5) !== 0)){
+    console.log("Fizz");
+    }
+    else if (((i % 5) === 0) && ((i % 3) !== 0)){
+    console.log("Buzz");
+    }
+    else {
+    console.log(i);
+    }
+}
 
 // CHESS BOARD
 // 23. Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines.
@@ -113,3 +279,50 @@ var numThrees = [];
 
 // When you have a program that generates this pattern, define a variable size = 8 and change the program
 // sso that it works for any size, outputting a grid of the given width and height.
+var chessboard = [];
+var line = 1;
+for (i = 1; i < 65; i++) {
+
+    if (line % 2 === 0) {
+
+        if ((i % 2) === 0) {
+            if (i % 8 === 0) {
+                chessboard[i] = "#\n";
+                line = line + 1;
+            } else {
+                chessboard[i] = "#"
+            }
+        } else {
+            if (i % 8 === 0) {
+                chessboard[i] = " \n";
+                line = line + 1;
+            } else {
+                chessboard[i] = " "
+            }
+        }
+    }
+    else{
+    	if ((i % 2) === 0) {
+            if (i % 8 === 0) {
+                chessboard[i] = " \n";
+                line = line + 1;
+            } else {
+                chessboard[i] = " "
+            }
+        } else {
+            if (i % 8 === 0) {
+                chessboard[i] = "#\n";
+                line = line + 1;
+            } else {
+                chessboard[i] = "#"
+            }
+        }
+    }
+    	
+    }
+
+
+
+
+var newOne = chessboard.join("");
+console.log(newOne);
